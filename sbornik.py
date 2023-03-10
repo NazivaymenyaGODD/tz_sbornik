@@ -34,7 +34,7 @@ cursor = conn.cursor()
 #    )
 
 while True:
-    if time.localtime(time.time()).tm_min == 56 and time.localtime(time.time()).tm_sec == 30:
+    if time.localtime(time.time()).tm_min == 0 and time.localtime(time.time()).tm_sec == 30:
         my_list = []
         rating = None
         subject = []
@@ -69,6 +69,7 @@ while True:
                         for i in range(len(data)):
                             if my_list[0] == data[i][0]:
                                 check = 1
+                                break
                         if check == 0:
                             cursor.execute("INSERT INTO task (id, name,  quantity, complexity, href) VALUES(%s, %s, %s, %s, %s);", [my_list[0], my_list[1], my_list[-1], rating, my_href[0]])
                             cursor.execute("INSERT INTO subject(id, s1, s2, s3, s4) VALUES(%s, %s, %s, %s, %s);", [my_list[0], subject[0], subject[1], subject[2], subject[3]])
