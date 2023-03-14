@@ -2,7 +2,7 @@ import telebot
 import psycopg2
 
 
-key = '6135998307:AAEgWvCTm3gmu5VgGdHKRidfQhOTLthmqRQ'
+key = '***'
 bot = telebot.TeleBot(key)
 conn = psycopg2.connect(dbname="postgres", 
                         user="postgres", 
